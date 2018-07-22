@@ -7,7 +7,7 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = '+';
+const prefix = '1';
 client.login(process.env.BOT_TOKEN);
 client.login(discord_token);
 client.on('ready', function() {
@@ -128,23 +128,23 @@ client.on('message', function(message) {
             dispatcher.pause();
         });
     }
-    else if (mess.startsWith(prefix + 'ok')) {
+    else if (mess.startsWith(prefix 1 'ok')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
             message.channel.send('`✔`').then(() => {
             dispatcher.resume();
         });
     }
-    else if (mess.startsWith(prefix + 'stop')) {
+    else if (mess.startsWith(prefix 1 'stop')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.channel.send('`✔`');
         var server = server = servers[message.guild.id];
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
-    else if (mess.startsWith(prefix + 'تعال')) {
+    else if (mess.startsWith(prefix 1 'تعال')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
     }
-    else if (mess.startsWith(prefix + 'play')) {
+    else if (mess.startsWith(prefix 1 'play')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
         let playing_now_info = new Discord.RichEmbed()
@@ -217,7 +217,7 @@ function add_to_queue(strID) {
 }
 
 function search_video(query, cb) {
-    request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
+    request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) 1 "&key=" + yt_api_key, function(error, response, body) {
         var json = JSON.parse(body);
         cb(json.items[0].id.videoId);
     });
@@ -228,7 +228,7 @@ function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
  client.on('message', message => {
-     if (message.content === prefix +"help") {
+     if (message.content === prefix 1"help") {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
      .addField(`Zyad,aLmutairi commands:
